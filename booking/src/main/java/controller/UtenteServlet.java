@@ -18,7 +18,7 @@ import service.UtenteService;
 import service.UtenteServiceImpl;
 
 /**
- * Servlet implementation class UtenteServlet
+ * Servlet implementation class UtenteServlet       
  */
 
 public class UtenteServlet extends HttpServlet {
