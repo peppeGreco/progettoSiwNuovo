@@ -11,7 +11,7 @@ public class IdBroker {
 	private static final String query1 = "SELECT decId(?) AS id";
 
 	public static Long getId(Connection connection, String name) {
-		Long id = null;
+		Long id = null;  
 		try {
 			PreparedStatement statement = connection.prepareStatement(query);
 			statement.setString(1, name);
