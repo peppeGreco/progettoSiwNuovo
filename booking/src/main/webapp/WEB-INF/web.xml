@@ -1,0 +1,27 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>booking</display-name>
+  <servlet>
+  	<servlet-name>UtenteServlet</servlet-name>
+  	<display-name>UtenteServlet</display-name>
+  	<description></description>
+  	<servlet-class>controller.UtenteServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>UtenteStrutturaServlet</servlet-name>
+  	<display-name>UtenteStrutturaServlet</display-name>
+  	<description></description>
+  	<servlet-class>controller.UtenteStrutturaServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>UtenteServlet</servlet-name>
+  	<url-pattern>/UtenteServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>UtenteStrutturaServlet</servlet-name>
+  	<url-pattern>/UtenteStrutturaServlet</url-pattern>
+  </servlet-mapping>
+</web-app>
