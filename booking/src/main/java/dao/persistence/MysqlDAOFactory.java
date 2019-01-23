@@ -1,5 +1,6 @@
 package dao.persistence;
 
+import dao.StrutturaDao;
 import dao.UtenteDao;
 import dao.UtenteStrutturaDao;
 
@@ -28,6 +29,11 @@ public class MysqlDAOFactory extends DAOFactory{
 	@Override
 	public UtenteStrutturaDao getUtenteStrutturaDao() {
 		return new UtenteStrutturaDaoJDBC(dataSource);
+	}
+
+	@Override
+	public StrutturaDao getStrutturaDAO() {
+		return new StrutturaDaoJDBC(dataSource);
 	}
 
 }

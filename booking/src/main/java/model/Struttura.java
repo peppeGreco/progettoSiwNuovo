@@ -4,9 +4,9 @@ import java.util.Set;
 
 public class Struttura {
 
-	private Long idStruttuta;
+	private Long idStruttura;
 	private String nome;
-	private String città;
+	private String citta;
 	
 	private Set<Camera> camere;
 	
@@ -14,12 +14,12 @@ public class Struttura {
 	
 	public Struttura() {}
 
-	public Long getIdStruttuta() {
-		return idStruttuta;
+	public Long getIdStruttura() {
+		return idStruttura;
 	}
 
-	public void setIdStruttuta(Long idStruttuta) {
-		this.idStruttuta = idStruttuta;
+	public void setIdStruttura(Long idStruttura) {
+		this.idStruttura = idStruttura;
 	}
 
 	public String getNome() {
@@ -30,12 +30,12 @@ public class Struttura {
 		this.nome = nome;
 	}
 
-	public String getCittà() {
-		return città;
+	public String getCitta() {
+		return citta;
 	}
 
-	public void setCittà(String città) {
-		this.città = città;
+	public void setCitta(String citta) {
+		this.citta = citta;
 	}
 
 	public Set<Camera> getCamere() {

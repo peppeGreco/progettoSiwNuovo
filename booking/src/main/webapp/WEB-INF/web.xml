@@ -16,6 +16,12 @@
   	<description></description>
   	<servlet-class>controller.UtenteStrutturaServlet</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>StrutturaServlet</servlet-name>
+  	<display-name>StrutturaServlet</display-name>
+  	<description></description>
+  	<servlet-class>controller.StrutturaServlet</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>UtenteServlet</servlet-name>
   	<url-pattern>/UtenteServlet</url-pattern>
@@ -23,5 +29,9 @@
   <servlet-mapping>
   	<servlet-name>UtenteStrutturaServlet</servlet-name>
   	<url-pattern>/UtenteStrutturaServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>StrutturaServlet</servlet-name>
+  	<url-pattern>/StrutturaServlet</url-pattern>
   </servlet-mapping>
 </web-app>
