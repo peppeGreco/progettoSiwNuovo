@@ -33,6 +33,7 @@ public class UtenteStrutturaDaoJDBC implements UtenteStrutturaDao {
 			{
 				utenteStruttura.setEmail(email);
 				utenteStruttura.setPassword(password);
+				utenteStruttura.setIdUtenteStruttura(result.getLong("idUtenteStruttura"));
 				return utenteStruttura;
 			}
 			

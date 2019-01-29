@@ -7,6 +7,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.google.gson.Gson;
 
@@ -48,6 +49,9 @@ public class UtenteStrutturaServlet extends HttpServlet {
 			
 			UtenteStruttura utenteStruttura = this.utenteStrutturaService.login(request.getParameter("email"), request.getParameter("password"));
 		    
+			HttpSession session = request.getSession();
+			session.setAttribute("utenteStruttura", utenteStruttura);
+			
 		    String utenteStrutturaString = this.gson.toJson(utenteStruttura);
 		    
 	        PrintWriter out = response.getWriter();
@@ -66,6 +70,10 @@ public class UtenteStrutturaServlet extends HttpServlet {
 			utenteStruttura.setEmail(request.getParameter("email"));
 			utenteStruttura.setNumeroTelefono(Integer.parseInt(request.getParameter("numeroTelefono")));
 			utenteStruttura.setPassword(request.getParameter("password"));
+			
+			HttpSession session = request.getSession();
+			session.setAttribute("utenteStruttura", utenteStruttura);
+			
 			
 			PrintWriter out = response.getWriter();
 	        response.setContentType("application/json");

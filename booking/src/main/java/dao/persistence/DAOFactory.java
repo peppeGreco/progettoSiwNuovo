@@ -1,5 +1,6 @@
 package dao.persistence;
 
+import dao.CameraDao;
 import dao.StrutturaDao;
 import dao.UtenteDao;
 import dao.UtenteStrutturaDao;
@@ -52,5 +53,7 @@ public abstract class DAOFactory {
 	public abstract UtenteStrutturaDao getUtenteStrutturaDao();
 	
 	public abstract StrutturaDao getStrutturaDAO();
+	
+	public abstract CameraDao getCameraDAO();
 
 }

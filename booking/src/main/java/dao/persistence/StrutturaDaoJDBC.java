@@ -23,13 +23,14 @@ public class StrutturaDaoJDBC implements StrutturaDao {
 		try {
 			Long id = IdBroker.getId(connection,"struttura");
 			struttura.setIdStruttura(id); 			
-			String insert = "INSERT INTO struttura(nome , citta, idStruttura) values (?,?,?)";
+			String insert = "INSERT INTO struttura(nome , citta, idStruttura , UtenteStruttura_idUtenteStruttura) values (?,?,?,?)";
 			PreparedStatement statement = connection.prepareStatement(insert);
 			
 			statement.setString(1, struttura.getNome());
 			statement.setString(2, struttura.getCitta());
 			statement.setLong(3, struttura.getIdStruttura());
-
+			statement.setLong(4, struttura.getUtenteStruttura().getIdUtenteStruttura());
+			
 			statement.executeUpdate();
 
 		} catch (SQLException e) {
@@ -93,14 +94,14 @@ public class StrutturaDaoJDBC implements StrutturaDao {
 		Connection connection = this.dataSource.getConnection();
 		
 		try {			
-			String update = "DELETE FROM struttura WHERE idStruttura = ?";
-			PreparedStatement statement = connection.prepareStatement(update);
+			String delete = "DELETE FROM struttura WHERE idStruttura = ? ";
+			PreparedStatement statement = connection.prepareStatement(delete);
 			
 			
 			statement.setLong(1, idStruttura);
 
 			if(statement.executeUpdate() == 1) IdBroker.decID(connection, "struttura");
-			
+						
 
 		} catch (SQLException e) {
 			if (connection != null) {

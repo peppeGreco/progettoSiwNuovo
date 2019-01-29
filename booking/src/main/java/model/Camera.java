@@ -1,11 +1,14 @@
 package model;
 
+
 public class Camera {
 	
 	private Long numeroCamera;
 	private Integer numeriPostiLetto;
 	private Boolean occupata;
 	private Double prezzo;
+	private Integer numeroSingoli;
+	private Integer numeroMatrimoniali;
 	
 	private Prenotazione prenotazione;
 	private Struttura struttura;
@@ -56,5 +59,24 @@ public class Camera {
 
 	public void setStruttura(Struttura struttura) {
 		this.struttura = struttura;
+	}
+
+	public Integer getNumeroSingoli() {
+		return numeroSingoli;
+	}
+
+
+	public void setNumeroSingoli(Integer numeroSingoli) {
+		this.numeroSingoli = numeroSingoli;
+	}
+
+
+	public Integer getNumeroMatrimoniali() {
+		return numeroMatrimoniali;
+	}
+
+
+	public void setNumeroMatrimoniali(Integer numeroMatrimoniali) {
+		this.numeroMatrimoniali = numeroMatrimoniali;
 	}
 }

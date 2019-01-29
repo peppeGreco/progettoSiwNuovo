@@ -7,10 +7,12 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.google.gson.Gson;
 
 import model.Struttura;
+import model.UtenteStruttura;
 import service.StrutturaService;
 import service.StrutturaServiceImpl;
 
@@ -44,9 +46,15 @@ public class StrutturaServlet extends HttpServlet {
 		case "create": {
 			
 			Struttura struttura = new Struttura();
+			
+			HttpSession session = request.getSession();
+			session.setAttribute("struttura", struttura);
 		
+			struttura.setUtenteStruttura((UtenteStruttura) session.getAttribute("utenteStruttura"));
 			struttura.setNome(request.getParameter("nome"));
 			struttura.setCitta(request.getParameter("citta"));
+			
+			String strutturaString = this.gson.toJson(struttura);
 			
 			PrintWriter out = response.getWriter();
 	        response.setContentType("application/json");
