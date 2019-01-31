@@ -63,7 +63,7 @@ public class CameraDaoJDBC implements CameraDao {
 		Connection connection = this.dataSource.getConnection();
 		try {			
 			String update = "UPDATE camera " + 
-					"SET  numeriPostiLetto = ? , occupata = ? , prezzo = ? , numeroSingole = ? , numeroMatrimoniali = ? " + 
+					"SET  numeriPostiLetto = ? , occupata = ? , prezzo = ? , numeroSingole = ? , numeroMatrimoniali = ? , Prenotazione_idPrenotazione = ? " + 
 					"WHERE numeroCamera = ?";
 			PreparedStatement statement = connection.prepareStatement(update);
 			
@@ -72,7 +72,12 @@ public class CameraDaoJDBC implements CameraDao {
 			statement.setDouble(3, camera.getPrezzo());
 			statement.setInt(4, camera.getNumeroSingoli());
 			statement.setInt(5,camera.getNumeroMatrimoniali());
-			statement.setLong(6, camera.getNumeroCamera());
+			if(camera.getPrenotazione()!=null) {
+				statement.setLong(6,camera.getPrenotazione().getIdPrenotazione());
+			}
+			
+			statement.setLong(7, camera.getNumeroCamera());
+			
 
 			statement.executeUpdate();
 

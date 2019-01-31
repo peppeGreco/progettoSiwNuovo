@@ -1,6 +1,7 @@
 package dao.persistence;
 
 import dao.CameraDao;
+import dao.PrenotazioneDao;
 import dao.StrutturaDao;
 import dao.UtenteDao;
 import dao.UtenteStrutturaDao;
@@ -40,6 +41,11 @@ public class MysqlDAOFactory extends DAOFactory{
 	@Override
 	public CameraDao getCameraDAO() {
 		return new CameraDaoJDBC(dataSource);
+	}
+
+	@Override
+	public PrenotazioneDao getPrenotazioneDao() {
+		return new PrenotazioneDaoJDBC(dataSource);
 	}
 
 }

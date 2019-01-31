@@ -10,6 +10,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.google.gson.Gson;
 
@@ -50,6 +51,9 @@ public class UtenteServlet extends HttpServlet {
 			
 		    String utenteString = this.gson.toJson(utente);
 		    
+		    HttpSession session = request.getSession();
+			session.setAttribute("utente", utente);
+		    
 	        PrintWriter out = response.getWriter();
 	        response.setContentType("application/json");
 	        response.setCharacterEncoding("UTF-8");
@@ -86,6 +90,9 @@ public class UtenteServlet extends HttpServlet {
 			utente.setPassword(request.getParameter("password"));
 			utente.setRegione(request.getParameter("regione"));
 			utente.setVia(request.getParameter("via"));
+			
+			 HttpSession session = request.getSession();
+			session.setAttribute("utente", utente);
 			
 			PrintWriter out = response.getWriter();
 	        response.setContentType("application/json");

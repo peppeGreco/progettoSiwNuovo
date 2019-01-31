@@ -32,6 +32,7 @@ public class UtenteDaoJDBC implements UtenteDao {
 			{
 				utente.setEmail(email);
 				utente.setPassword(password);
+				utente.setIdUtente(result.getLong("idUtente"));
 				return utente;
 			}
 			
@@ -69,8 +70,6 @@ public class UtenteDaoJDBC implements UtenteDao {
 			statement.setString(10, utente.getVia());
 			statement.setString(11, utente.getCivico());
 			long secs = utente.getDataNascita().getTime();
-			System.out.println("Date in ms " + secs);
-			System.out.println("Date: " + new java.sql.Date(secs));
 			statement.setDate(12, new java.sql.Date(secs));
 			statement.setLong(13, utente.getIdUtente());
 

@@ -28,6 +28,12 @@
   	<description></description>
   	<servlet-class>controller.CameraServlet</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>PrenotazioneServlet</servlet-name>
+  	<display-name>PrenotazioneServlet</display-name>
+  	<description></description>
+  	<servlet-class>controller.PrenotazioneServlet</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>UtenteServlet</servlet-name>
   	<url-pattern>/UtenteServlet</url-pattern>
@@ -43,5 +49,9 @@
   <servlet-mapping>
   	<servlet-name>CameraServlet</servlet-name>
   	<url-pattern>/CameraServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>PrenotazioneServlet</servlet-name>
+  	<url-pattern>/PrenotazioneServlet</url-pattern>
   </servlet-mapping>
 </web-app>

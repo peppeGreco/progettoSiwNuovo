@@ -9,6 +9,7 @@ public class Prenotazione {
 	private Date checkIn;
 	private Date checkOut;
 	private Boolean scadenzaModifica;
+	private Double totale;
 	
 	private Set<Camera> camere;
 	
@@ -63,6 +64,14 @@ public class Prenotazione {
 
 	public void setServizioAutorizzazioniPagamento(ServiziAutorizzazioniPagamento servizioAutorizzazioniPagamento) {
 		this.servizioAutorizzazioniPagamento = servizioAutorizzazioniPagamento;
+	}
+
+	public Double getTotale() {
+		return totale;
+	}
+
+	public void setTotale(Double totale) {
+		this.totale = totale;
 	}
 	
 }

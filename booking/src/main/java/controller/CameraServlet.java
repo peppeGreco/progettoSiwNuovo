@@ -7,7 +7,6 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import com.google.gson.Gson;
 
@@ -47,10 +46,6 @@ public class CameraServlet extends HttpServlet {
 			
 			Camera camera = new Camera();
 			
-			HttpSession session = request.getSession();
-			
-			
-//			camera.setStruttura((Struttura) session.getAttribute("struttura"));
 			camera.setStruttura(new Struttura());
 			camera.getStruttura().setIdStruttura(Long.valueOf(request.getParameter("idStruttura")));
 			camera.setNumeriPostiLetto(Integer.parseInt(request.getParameter("numeroPostiLetto")));
